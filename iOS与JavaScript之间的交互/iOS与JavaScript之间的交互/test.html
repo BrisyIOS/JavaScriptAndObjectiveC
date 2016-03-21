@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>iOS与JavaScript之间的交互问题</title>
+	<style type="text/css">
+	  * {
+	  	font-size: 35px;
+	  }
+	</style>
+  <script type="text/javascript">
+  
+  var jsParamFunc = function(argument) {
+    document.getElementById('jsParamFuncSpan').innerHTML
+    = "姓名：" + argument['name'] + "," + "性别：" + argument['gender'] + "," + "年龄：" + argument['age'];
+    
+  }
+  
+  </script>
+  
+</head>
+
+<body>
+  
+<div style="margin-top: 100px">
+    
+    <h1 style = "color : blue" >iOS与JS之间的交互问题</h1>
+	<input type="button" value="JS调用OC的方法，打印学生信息" style = "color : blue" onclick="Student.printInformation()">
+</div>
+<div>
+	<input type="button" value="JS调用OC的弹框方法显示学生语文成绩" style = "color : blue" onclick="Student.showInformationwithNameScore('张三', '语文成绩为90分')">
+</div>
+
+<div>
+	<input type="button" value="JS调用Oc，然后在OC中通过调用JS方法来传值给JS" style = "color : blue" onclick="Student.jsCallObjcAndObjcCallJsWithDict({'name': '张三', 'gender': '男', 'age': 17})">
+</div>
+
+<div>
+	<span id="jsParamFuncSpan" style="color: green; font-size: 50px;"></span>
+</div>
+
+
+</body>
+</html>
